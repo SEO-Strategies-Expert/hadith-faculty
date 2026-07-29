@@ -64,3 +64,5 @@ img.news-cover{height:180px}
 .profile-card:hover,.news-card:hover,.bento .card:hover,.lab-card:hover{transform:translateY(-4px);box-shadow:0 22px 45px rgba(6,25,19,.13)}
 
 @media(max-width:760px){.hero-photo,.hero-photo-stage{min-height:380px}.bento .featured .card-media{height:190px}.lab-photo{height:170px}}
+
+@media(max-width:1120px){.primary-nav,.site-header.scrolled .primary-nav{inset-block-start:68px;height:calc(100dvh - 68px)}}
