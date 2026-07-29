@@ -74,3 +74,5 @@ body{background-image:linear-gradient(rgba(246,241,231,.58),rgba(246,241,231,.72
 .card:not(:has(img)),.step,.trust-item,.research-mini-card,.faq details,.fee-option{position:relative;overflow:hidden}
 .card:not(:has(img))::before,.step::after,.trust-item::after,.research-mini-card::after,.faq details::after,.fee-option::after{content:"";position:absolute;width:125px;height:125px;left:-28px;bottom:-34px;background:url("/media/islamic-light-bg.webp") left bottom/245px auto no-repeat;opacity:.58;filter:contrast(1.12) saturate(.82);mix-blend-mode:multiply;pointer-events:none}
 .card:not(:has(img))>* ,.step>* ,.trust-item>* ,.research-mini-card>* ,.faq details>* ,.fee-option>*{position:relative;z-index:1}
+
+.page-hero-shell[style*="--page-hero-image"],.research-hero-shell[style*="--page-hero-image"]{background-image:linear-gradient(90deg,rgba(6,19,15,.58),rgba(6,19,15,.88)),var(--page-hero-image);background-size:cover;background-position:center;background-repeat:no-repeat}
