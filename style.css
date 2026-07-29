@@ -51,9 +51,9 @@ img.header-accreditation-icon,img.accreditation-shield,img.university-seal{displ
 .hero-photo-stage{position:relative;padding:0;background:var(--green-950)}
 .hero-photo-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(3,24,18,.3));pointer-events:none}
 .hero-photo{width:100%;height:100%;min-height:480px;display:block;object-fit:cover}
-.islamic-light-section{background-image:linear-gradient(rgba(250,247,240,.9),rgba(250,247,240,.94)),url("media/islamic-light-bg.webp");background-position:center;background-size:cover}
-.islamic-dark-section{background-image:linear-gradient(rgba(5,35,27,.87),rgba(3,24,18,.94)),url("media/islamic-dark-bg.webp")!important;background-position:center;background-size:cover}
-.islamic-ornament-section{background-image:linear-gradient(rgba(250,247,240,.93),rgba(250,247,240,.96)),url("media/islamic-light-bg.webp");background-position:center;background-size:cover}
+.islamic-light-section{background-image:linear-gradient(rgba(250,247,240,.9),rgba(250,247,240,.94)),url("/media/islamic-light-bg.webp");background-position:center;background-size:cover}
+.islamic-dark-section{background-image:linear-gradient(rgba(5,35,27,.87),rgba(3,24,18,.94)),url("/media/islamic-dark-bg.webp")!important;background-position:center;background-size:cover}
+.islamic-ornament-section{background-image:linear-gradient(rgba(250,247,240,.93),rgba(250,247,240,.96)),url("/media/islamic-light-bg.webp");background-position:center;background-size:cover}
 .card-media{display:block;width:calc(100% + 48px);height:138px;margin:-24px -24px 18px;object-fit:cover;border-radius:var(--radius) var(--radius) 0 0}
 .bento .featured .card-media{height:230px}
 .lab-photo{display:block;width:100%;height:190px;margin-top:17px;border-radius:18px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
@@ -68,8 +68,9 @@ img.news-cover{height:180px}
 @media(max-width:1120px){.primary-nav,.site-header.scrolled .primary-nav{inset-block-start:68px;height:calc(100dvh - 68px)}}
 
 /* Subtle Islamic geometry shared across the site */
-body{background-image:linear-gradient(rgba(246,241,231,.88),rgba(246,241,231,.94)),url("media/islamic-light-bg.webp");background-size:auto,1600px auto;background-position:center top;background-attachment:fixed}
-.page-hero-shell,.research-hero-shell{background-image:linear-gradient(145deg,rgba(16,56,46,.94),rgba(6,19,15,.97)),url("media/islamic-light-bg.webp");background-size:cover;background-position:center}
+body{background-image:linear-gradient(rgba(246,241,231,.58),rgba(246,241,231,.72)),url("/media/islamic-light-bg.webp");background-size:auto,1450px auto;background-position:center top;background-attachment:fixed}
+.page-hero-shell,.research-hero-shell{background-image:linear-gradient(145deg,rgba(16,56,46,.82),rgba(6,19,15,.9)),url("/media/islamic-light-bg.webp");background-size:cover;background-position:center}
+.islamic-light-section,.islamic-ornament-section{background-image:linear-gradient(rgba(250,247,240,.68),rgba(250,247,240,.78)),url("/media/islamic-light-bg.webp")}
 .card:not(:has(img)),.step,.trust-item,.research-mini-card,.faq details,.fee-option{position:relative;overflow:hidden}
-.card:not(:has(img))::before,.step::after,.trust-item::after,.research-mini-card::after,.faq details::after,.fee-option::after{content:"";position:absolute;width:105px;height:105px;left:-32px;bottom:-40px;background:url("media/islamic-light-bg.webp") left bottom/260px auto no-repeat;opacity:.2;pointer-events:none}
+.card:not(:has(img))::before,.step::after,.trust-item::after,.research-mini-card::after,.faq details::after,.fee-option::after{content:"";position:absolute;width:125px;height:125px;left:-28px;bottom:-34px;background:url("/media/islamic-light-bg.webp") left bottom/245px auto no-repeat;opacity:.58;filter:contrast(1.12) saturate(.82);mix-blend-mode:multiply;pointer-events:none}
 .card:not(:has(img))>* ,.step>* ,.trust-item>* ,.research-mini-card>* ,.faq details>* ,.fee-option>*{position:relative;z-index:1}
