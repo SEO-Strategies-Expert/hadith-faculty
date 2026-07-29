@@ -76,3 +76,8 @@ body{background-image:linear-gradient(rgba(246,241,231,.58),rgba(246,241,231,.72
 .card:not(:has(img))>* ,.step>* ,.trust-item>* ,.research-mini-card>* ,.faq details>* ,.fee-option>*{position:relative;z-index:1}
 
 .page-hero-shell[style*="--page-hero-image"],.research-hero-shell[style*="--page-hero-image"]{background-image:linear-gradient(90deg,rgba(6,19,15,.58),rgba(6,19,15,.88)),var(--page-hero-image);background-size:cover;background-position:center;background-repeat:no-repeat}
+
+.phase-02-card{overflow:hidden}
+.phase-02-card-media{width:100%;aspect-ratio:16/9;overflow:hidden;background:#0c3329}
+.phase-02-card-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.card.phase-02-card:not(.news-card):not(.profile-card)>.phase-02-card-media{width:calc(100% + 48px);margin:-24px -24px 20px}
