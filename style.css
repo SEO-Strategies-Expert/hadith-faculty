@@ -46,3 +46,21 @@ a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.
 @media(max-width:760px){.header-accreditation-inner{justify-content:center}.accreditation-note{font-size:10px}.brand-emblem{width:46px;height:46px}.brand-copy b{font-size:12px}.primary-nav,.site-header.scrolled .primary-nav{inset-block-start:102px}.university-trigger{max-width:none}.mobile-actions{flex-direction:column}.mobile-actions .live-button,.mobile-actions .student-login{width:100%}}
 
 img.header-accreditation-icon,img.accreditation-shield,img.university-seal{display:block;object-fit:cover;border:0;background:none;padding:0}
+
+/* Homepage imagery and restrained Islamic ornament */
+.hero-photo-stage{position:relative;padding:0;background:var(--green-950)}
+.hero-photo-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(3,24,18,.3));pointer-events:none}
+.hero-photo{width:100%;height:100%;min-height:480px;display:block;object-fit:cover}
+.islamic-light-section{background-image:linear-gradient(rgba(250,247,240,.9),rgba(250,247,240,.94)),url("media/islamic-light-bg.webp");background-position:center;background-size:cover}
+.islamic-dark-section{background-image:linear-gradient(rgba(5,35,27,.87),rgba(3,24,18,.94)),url("media/islamic-dark-bg.webp")!important;background-position:center;background-size:cover}
+.islamic-ornament-section{background-image:linear-gradient(rgba(250,247,240,.93),rgba(250,247,240,.96)),url("media/islamic-light-bg.webp");background-position:center;background-size:cover}
+.card-media{display:block;width:calc(100% + 48px);height:138px;margin:-24px -24px 18px;object-fit:cover;border-radius:var(--radius) var(--radius) 0 0}
+.bento .featured .card-media{height:230px}
+.lab-photo{display:block;width:100%;height:190px;margin-top:17px;border-radius:18px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
+img.profile-art,img.news-cover{display:block;width:100%;object-fit:cover}
+img.profile-art{height:190px}
+img.news-cover{height:180px}
+.profile-card,.news-card,.bento .card,.lab-card{transition:transform .25s ease,box-shadow .25s ease}
+.profile-card:hover,.news-card:hover,.bento .card:hover,.lab-card:hover{transform:translateY(-4px);box-shadow:0 22px 45px rgba(6,25,19,.13)}
+
+@media(max-width:760px){.hero-photo,.hero-photo-stage{min-height:380px}.bento .featured .card-media{height:190px}.lab-photo{height:170px}}
