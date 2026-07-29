@@ -66,3 +66,10 @@ img.news-cover{height:180px}
 @media(max-width:760px){.hero-photo,.hero-photo-stage{min-height:380px}.bento .featured .card-media{height:190px}.lab-photo{height:170px}}
 
 @media(max-width:1120px){.primary-nav,.site-header.scrolled .primary-nav{inset-block-start:68px;height:calc(100dvh - 68px)}}
+
+/* Subtle Islamic geometry shared across the site */
+body{background-image:linear-gradient(rgba(246,241,231,.88),rgba(246,241,231,.94)),url("media/islamic-light-bg.webp");background-size:auto,1600px auto;background-position:center top;background-attachment:fixed}
+.page-hero-shell,.research-hero-shell{background-image:linear-gradient(145deg,rgba(16,56,46,.94),rgba(6,19,15,.97)),url("media/islamic-light-bg.webp");background-size:cover;background-position:center}
+.card:not(:has(img)),.step,.trust-item,.research-mini-card,.faq details,.fee-option{position:relative;overflow:hidden}
+.card:not(:has(img))::before,.step::after,.trust-item::after,.research-mini-card::after,.faq details::after,.fee-option::after{content:"";position:absolute;width:105px;height:105px;left:-32px;bottom:-40px;background:url("media/islamic-light-bg.webp") left bottom/260px auto no-repeat;opacity:.2;pointer-events:none}
+.card:not(:has(img))>* ,.step>* ,.trust-item>* ,.research-mini-card>* ,.faq details>* ,.fee-option>*{position:relative;z-index:1}
