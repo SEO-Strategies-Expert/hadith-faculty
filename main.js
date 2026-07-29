@@ -1,10 +1,62 @@
 const qs=(s,p=document)=>p.querySelector(s), qsa=(s,p=document)=>[...p.querySelectorAll(s)];
 
 const menuToggle=qs('.menu-toggle');
-const navLinks=qs('.nav-links');
+const primaryNav=qs('.primary-nav');
+const menuItems=qsa('.has-menu');
+function closeSubmenus(except){
+  menuItems.forEach(item=>{
+    if(item===except)return;
+    item.classList.remove('open');
+    qs('.nav-link-button',item)?.setAttribute('aria-expanded','false');
+  });
+}
+function closeNavigation(){
+  primaryNav?.classList.remove('open');
+  document.body.classList.remove('nav-open');
+  menuToggle?.setAttribute('aria-expanded','false');
+  menuToggle?.setAttribute('aria-label','فتح القائمة');
+  closeSubmenus();
+}
 menuToggle?.addEventListener('click',()=>{
-  const open=navLinks?.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded',String(Boolean(open)));
+  const open=!primaryNav?.classList.contains('open');
+  primaryNav?.classList.toggle('open',open);
+  document.body.classList.toggle('nav-open',open);
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.setAttribute('aria-label',open?'إغلاق القائمة':'فتح القائمة');
+});
+menuItems.forEach(item=>{
+  const trigger=qs('.nav-link-button',item);
+  trigger?.addEventListener('click',event=>{
+    event.stopPropagation();
+    const open=!item.classList.contains('open');
+    closeSubmenus(item);
+    item.classList.toggle('open',open);
+    trigger.setAttribute('aria-expanded',String(open));
+  });
+});
+primaryNav?.addEventListener('click',event=>{if(event.target===primaryNav)closeNavigation()});
+document.addEventListener('click',event=>{if(!event.target.closest('.has-menu'))closeSubmenus()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeNavigation();menuToggle?.focus()}});
+window.addEventListener('resize',()=>{if(innerWidth>1120)closeNavigation()});
+window.addEventListener('scroll',()=>qs('.site-header')?.classList.toggle('scrolled',scrollY>24),{passive:true});
+
+const currentFile=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+const activeGroups={
+  college:['about.html','faculty.html','contact.html'],
+  programs:['programs.html','program-foundation.html','program-takhrij.html','program-manuscripts.html','program-higher.html','courses.html','ijazat.html','admissions.html'],
+  research:['takhrij-lab.html','manuscripts-lab.html','library.html','hadith-research-sites.html'],
+  journal:['publications.html']
+};
+qsa('.nav-links a[href]').forEach(link=>{
+  const href=(link.getAttribute('href')||'').split('#')[0].toLowerCase();
+  if(href===currentFile)link.classList.add('active');
+});
+Object.entries(activeGroups).forEach(([group,files])=>{
+  if(files.includes(currentFile)){
+    const trigger=qs(`#${group}-menu`)?.previousElementSibling;
+    trigger?.classList.add('active');
+    trigger?.setAttribute('aria-current','page');
+  }
 });
 
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
